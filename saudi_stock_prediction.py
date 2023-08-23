@@ -47,7 +47,7 @@ data.reset_index(inplace=True)
 
 # Display the stock data as a line chart
 st.write(" البيانات الحقيقية لاخر ستة أيام")
-st.write(data.tail())
+st.write(data.tail(6))
 #st.line_chart(data["Close"])
 
 
