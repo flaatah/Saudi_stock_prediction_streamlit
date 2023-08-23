@@ -28,7 +28,7 @@ companies = {"2222.SR": "ارامكو", "1211.SR": "معادن","2010.SR": "سا
 # Slider for user to choose number of months
 # The model can predict up to 12 months
 n_months = st.slider("اختر عدد الشهور", 0, 12)
-st.write(" اختيار 0 يعني عدم التنبؤ \n أما اختيار من 1-6 التبنؤ بالاشهر المستقبلية")
+st.write(" اختيار 0 يعني عدم التنبؤ \n أما اختيار من 1-12 التبنؤ بالاشهر المستقبلية")
 period = n_months 
 
 
