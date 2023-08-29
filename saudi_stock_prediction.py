@@ -6,6 +6,7 @@ from prophet.plot import plot_plotly
 from plotly import graph_objs as go
 import pandas as pd
 from prophet import Prophet
+import dateime
 
 st.title("التنبؤ بأسعار الاسهم السعودية")
 st.write("صفحة خاصة للتنبؤ لبعض أسعار السهم السعودية ")
