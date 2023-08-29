@@ -19,7 +19,7 @@ st.warning("الصفحة عبارة عن وسيلة لمساعدة المستخ�
 
 # Define the start and end dates
 START = "2000-01-01"
-TODAY = datetime.now()
+TODAY = datetime.now().strftime("%Y-%m-%d")
 
 # Create a dictionary of symbols and names of the companies
 companies = {"2222.SR": "ارامكو", "1211.SR": "معادن","2010.SR": "سابك", "3060.SR": "اسمنت ينبع",
