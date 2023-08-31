@@ -79,7 +79,8 @@ forecast = m.predict(future)
 
 # Show and plot forecast
 st.subheader('البيانات المتنبؤة')
-st.write(forecast.tail(12))
+st.write(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+.tail(12))
     
 st.write(f' عرض توقع الاسعار ل {period} أشهر')
 fig1 = plot_plotly(m, forecast)
