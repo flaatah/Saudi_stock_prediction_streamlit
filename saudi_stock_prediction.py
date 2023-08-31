@@ -2,7 +2,7 @@
 import streamlit as st
 import yfinance as yf
 from datetime import date
-from prophet.plot import plot_plotly
+from prophet.plot import plot_plotly, plot_components_plotly
 from plotly import graph_objs as go
 import pandas as pd
 from prophet import Prophet
@@ -79,7 +79,7 @@ forecast = m.predict(future)
 
 # Show and plot forecast
 st.subheader('البيانات المتنبؤة')
-st.write(forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper', 'weekly_lower', 'weekly_upper', 'yearly', 'weekly']]
+st.write(forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper', 'weekly_lower', 'weekly_upper']]
 .tail(12))
     
 st.write(f' عرض توقع الاسعار ل {period} أشهر')
