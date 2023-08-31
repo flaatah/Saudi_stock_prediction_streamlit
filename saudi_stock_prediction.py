@@ -79,7 +79,7 @@ forecast = m.predict(future)
 
 # Show and plot forecast
 st.subheader('البيانات المتنبؤة')
-st.write(forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper', 'weekly_lower', 'weekly_upper', 'yearly_lower', 'yearly_upper']]
+st.write(forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']]
 .tail(12))
     
 st.write(f' عرض توقع الاسعار ل {period} أشهر')
