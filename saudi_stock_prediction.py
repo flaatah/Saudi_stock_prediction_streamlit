@@ -115,7 +115,7 @@ train['ds'] = pd.to_datetime(train['ds'])
 
 #Fit and predict
 m = Prophet()
-m.add_country_holidays(country_name='SA')
+#m.add_country_holidays(country_name='SA')
 m.fit(train)
 future = m.make_future_dataframe(periods=period, freq="M")
 forecast = m.predict(future)
