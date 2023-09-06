@@ -130,6 +130,6 @@ fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
 st.write("مكونات التنبؤ")
-fig2 = m.plot_components_plotly(forecast)
+fig2 = m.plot_components(forecast)
 st.write(fig2)
 #m.plot_plotly()
