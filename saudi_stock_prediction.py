@@ -72,7 +72,7 @@ train = train.rename(columns={"Date": "ds", "Close": "y"})
 train['ds'] = pd.to_datetime(train['ds'])
 
 #Fit and predict
-m = Prophet(yearly_seasonality=True)
+m = Prophet()
 m.add_country_holidays(country_name='SA')
 m.fit(train)
 future = m.make_future_dataframe(periods=period, freq="M")
