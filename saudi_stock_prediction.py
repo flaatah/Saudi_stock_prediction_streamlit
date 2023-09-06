@@ -115,7 +115,7 @@ train['ds'] = pd.to_datetime(train['ds'])
 
 #Fit and predict
 m = Prophet()
-#m.add_country_holidays(country_name='SA')
+m.add_country_holidays(country_name='SA')
 m.fit(train)
 future = m.make_future_dataframe(periods=period, freq="M")
 forecast = m.predict(future)
@@ -130,6 +130,6 @@ fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
 st.write("مكونات التنبؤ")
-fig2 = plot_components_plotly(m,forecast)
+fig2 = m.plot_components_plotly(forecast)
 st.write(fig2)
 #m.plot_plotly()
