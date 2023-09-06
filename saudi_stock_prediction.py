@@ -24,11 +24,46 @@ st.warning("الصفحة عبارة عن وسيلة لمساعدة المستخ�
 START = "2000-01-01"
 TODAY = datetime.datetime.now()
 
+# # Create a dictionary of symbols and names of the companies
+# companies = {"2222.SR": "ارامكو", "1211.SR": "معادن","2010.SR": "سابك", "3060.SR": "اسمنت ينبع",
+# 	      "4164.SR": "النهدي","2050.SR": "صافولا","2280.SR": "المراعي","1180.SR": "الاهلي",
+# 		  "1120.SR": "الراجحي", "1010.SR": "الرياض", "8010.SR": "التعاونية","7010.SR": "الاتصالات",
+# 		  "7020.SR": "موبايلي","5110.SR": "كهرباء السعودية","4220.SR": "اعمار"}
+
+
+
 # Create a dictionary of symbols and names of the companies
-companies = {"2222.SR": "ارامكو", "1211.SR": "معادن","2010.SR": "سابك", "3060.SR": "اسمنت ينبع",
-	      "4164.SR": "النهدي","2050.SR": "صافولا","2280.SR": "المراعي","1180.SR": "الاهلي",
-		  "1120.SR": "الراجحي", "1010.SR": "الرياض", "8010.SR": "التعاونية","7010.SR": "الاتصالات",
-		  "7020.SR": "موبايلي","5110.SR": "كهرباء السعودية","4220.SR": "اعمار"}
+companies = {
+    "2222.SR": "ارامكو", 
+    "1211.SR": "معادن",
+    "2010.SR": "سابك",
+    "3060.SR": "اسمنت ينبع",
+    "4164.SR": "النهدي",
+    "2050.SR": "صافولا",
+    "2280.SR": "المراعي",
+    "1180.SR": "الاهلي",
+    "1120.SR": "الراجحي",
+    "1010.SR": "الرياض",
+    "8010.SR": "التعاونية",
+    "7010.SR": "الاتصالات",
+    "7020.SR": "موبايلي",
+    "5110.SR": "كهرباء السعودية",
+    "4220.SR": "اعمار"
+}
+
+# Create a list of names for the select box options
+names = list(companies.values())
+
+# Display a select box widget with the names as options
+selected_name = st.selectbox("اختر الشركة", names)
+
+# Get the symbol corresponding to the selected name
+selected_symbol = [symbol for symbol, name in companies.items() if name == selected_name][0]
+
+# Display the selected symbol
+st.write(f"الشركة المختارة: {selected_name}")
+st.write(f"الرمز المختار: {selected_symbol}")
+
 
 # Slider for user to choose number of months
 # The model can predict up to 12 months
@@ -39,15 +74,15 @@ period = n_months
 
 # Assuming your DataFrame is named 'companies' and has a 'name' and 'symbol' column
 
-# Extract the company names and symbols directly from the DataFrame
-company_names = companies['name'].tolist()
-company_symbols = companies['symbol'].tolist()
+# # Extract the company names and symbols directly from the DataFrame
+# company_names = companies['name'].tolist()
+# company_symbols = companies['symbol'].tolist()
 
-# Display a select box widget with the names as options
-selected_name = st.selectbox("اختر الشركة", company_names)
+# # Display a select box widget with the names as options
+# selected_name = st.selectbox("اختر الشركة", company_names)
 
-# Get the symbol corresponding to the selected name
-selected_symbol = company_symbols[company_names.index(selected_name)]
+# # Get the symbol corresponding to the selected name
+# selected_symbol = company_symbols[company_names.index(selected_name)]
 
 
 # Download and cache the stock data for the selected symbol
