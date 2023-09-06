@@ -37,14 +37,18 @@ st.write(" اختيار 0 يعني عدم التنبؤ \n أما اختيار م
 period = n_months 
 
 
-# Create a list of names for the select box options
-names = list(companies.values())
+# Assuming your DataFrame is named 'companies' and has a 'name' and 'symbol' column
+
+# Extract the company names and symbols directly from the DataFrame
+company_names = companies['name'].tolist()
+company_symbols = companies['symbol'].tolist()
 
 # Display a select box widget with the names as options
-selected_name = st.selectbox("اختر الشركة", names)
+selected_name = st.selectbox("اختر الشركة", company_names)
 
 # Get the symbol corresponding to the selected name
-selected_symbol = list(companies.keys())[names.index(selected_name)]
+selected_symbol = company_symbols[company_names.index(selected_name)]
+
 
 # Download and cache the stock data for the selected symbol
 data = yf.download(selected_symbol, START, TODAY)
