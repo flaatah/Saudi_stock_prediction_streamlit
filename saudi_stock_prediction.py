@@ -8,6 +8,9 @@ import pandas as pd
 from prophet import Prophet
 from datetime import datetime
 import datetime
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 
 st.title("التنبؤ بأسعار الاسهم السعودية")
 st.write("صفحة خاصة للتنبؤ لبعض أسعار السهم السعودية ")
