@@ -35,20 +35,21 @@ TODAY = datetime.datetime.now()
 # Create a dictionary of symbols and names of the companies
 companies = {
     "2222.SR": "ارامكو", 
-    "1211.SR": "معادن",
-    "2010.SR": "سابك",
     "3060.SR": "اسمنت ينبع",
-    "4164.SR": "النهدي",
-    "2050.SR": "صافولا",
-    "2280.SR": "المراعي",
+    "4220.SR": "اعمار",
     "1180.SR": "الاهلي",
+    "7010.SR": "الاتصالات",
+    "8010.SR": "التعاونية",
     "1120.SR": "الراجحي",
     "1010.SR": "الرياض",
-    "8010.SR": "التعاونية",
-    "7010.SR": "الاتصالات",
-    "7020.SR": "موبايلي",
+    "2280.SR": "المراعي",
+    "4164.SR": "النهدي",
+    "2010.SR": "سابك",
+    "2050.SR": "صافولا",
     "5110.SR": "كهرباء السعودية",
-    "4220.SR": "اعمار"
+    "1211.SR": "معادن",
+    "7020.SR": "موبايلي",
+        
 }
 
 # Create a list of names for the select box options
@@ -61,8 +62,8 @@ selected_name = st.selectbox("اختر الشركة", names)
 selected_symbol = [symbol for symbol, name in companies.items() if name == selected_name][0]
 
 # Display the selected symbol
-st.write(f"الشركة المختارة: {selected_name}")
-st.write(f"الرمز المختار: {selected_symbol}")
+# st.write(f"الشركة المختارة: {selected_name}")
+# st.write(f"الرمز المختار: {selected_symbol}")
 
 
 # Slider for user to choose number of months
