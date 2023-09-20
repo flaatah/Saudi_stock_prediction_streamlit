@@ -104,7 +104,7 @@ st.write(data_ar.tail(6)
 
 
 
-Plot raw data
+#Plot raw data
 def plot_raw_data():
 	fig = go.Figure()
 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="الافتتاح"))
