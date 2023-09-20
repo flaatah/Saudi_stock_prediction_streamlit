@@ -115,8 +115,8 @@ st.write(data_ar.tail(6)
 
 
 # Predict forecast with Prophet.
-train = data[['التاريخ','الإغلاق']]
-train = train.rename(columns={"التاريخ": "ds", "الإغلاق": "y"})
+train = data[['Date','Close']]
+train = train.rename(columns={"Date": "ds", "Close": "y"})
 
 #To datetime
 train['ds'] = pd.to_datetime(train['ds'])
