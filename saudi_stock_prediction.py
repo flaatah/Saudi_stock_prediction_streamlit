@@ -91,15 +91,54 @@ data = yf.download(selected_symbol, START, TODAY)
 data.reset_index(inplace=True)
 
 # Display the stock data as a line chart
-def new_name(data):
-	st.write(" البيانات الحقيقية لاخر ستة أيام")
-	data_ar = data.rename(columns={"Date": "التاريخ", "Open":"الافتتاح","High":"أعلى سعر","Low":"أدنى سعر",
-			    	"Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
-	st.write(data_ar.tail(6)
-	return data_ar.tail(6)
-new_name(data)
+ data_copy = data.copy()
+# def new_name(data):
+# 	st.write(" البيانات الحقيقية لاخر ستة أيام")
+# 	data_ar = data.rename(columns={"Date": "التاريخ", "Open":"الافتتاح","High":"أعلى سعر","Low":"أدنى سعر",
+# 			    	"Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
+# 	st.write(data_ar.tail(6)
+# 	return data_ar.tail(6)
+# new_name(data)
 
 #st.line_chart(data["Close"])
+
+import streamlit as st
+import pandas as pd
+
+# Create a sample DataFrame for testing
+data = pd.DataFrame({
+    "Date": ["2023-09-01", "2023-09-02", "2023-09-03", "2023-09-04", "2023-09-05", "2023-09-06"],
+    "Open": [100, 101, 102, 103, 104, 105],
+    "High": [110, 111, 112, 113, 114, 115],
+    "Low": [90, 91, 92, 93, 94, 95],
+    "Close": [105, 106, 107, 108, 109, 110],
+    "Adj Close": [104.5, 105.5, 106.5, 107.5, 108.5, 109.5],
+    "Volume": [1000, 1100, 1200, 1300, 1400, 1500]
+})
+
+st.write("البيانات الحقيقية لآخر ستة أيام")
+
+# Create a copy of the original data to preserve the original columns
+data_copy = data.copy()
+
+# Rename the columns
+data_arabic = data.rename(columns={
+    "Date": "التاريخ",
+    "Open": "الافتتاح",
+    "High": "أعلى سعر",
+    "Low": "أدنى سعر",
+    "Close": "الإغلاق",
+    "Adj Close": "سعر الإغلاق المعدل",
+    "Volume": "كمية التداول"
+})
+
+# Display the Arabic-named columns
+st.write(data_arabic.tail(6))
+
+# You can access the original data and the Arabic-named data separately
+st.write("Original Data:")
+st.write(data_copy)
+
 
 
 
