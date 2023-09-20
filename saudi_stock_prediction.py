@@ -97,7 +97,7 @@ def new_name(data):
 			    	"Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
 	#st.write(data_ar.tail(6)
 	return data_ar
-new_name(data.tail(6))
+print(new_name(data))
 
 #st.line_chart(data["Close"])
 
