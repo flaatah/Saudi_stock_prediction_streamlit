@@ -104,14 +104,14 @@ st.write(data_ar.tail(6)
 
 
 
-# Plot raw data
-# def plot_raw_data():
-# 	fig = go.Figure()
-# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="الافتتاح"))
-# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="الاغلاق"))
-# 	fig.layout.update(title_text='عرض البيانات الزمنية التاريخية', xaxis_rangeslider_visible=True)
-# 	st.plotly_chart(fig)	
-# plot_raw_data()
+Plot raw data
+def plot_raw_data():
+	fig = go.Figure()
+	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="الافتتاح"))
+	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="الاغلاق"))
+	fig.layout.update(title_text='عرض البيانات الزمنية التاريخية', xaxis_rangeslider_visible=True)
+	st.plotly_chart(fig)	
+plot_raw_data()
 
 
 # Predict forecast with Prophet.
