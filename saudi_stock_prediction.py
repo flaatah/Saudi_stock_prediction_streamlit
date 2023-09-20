@@ -148,7 +148,7 @@ train = train.rename(columns={"Date": "ds", "Close": "y"})
 train['ds'] = pd.to_datetime(train['ds'])
 
 #Fit and predict
-m = Prophet(yearly_seasonality=False, seasonality_mode='multiplicative')
+m = Prophet()
 m.add_country_holidays(country_name='SA')
 m.add_seasonality(name='monthly', period=30.5, fourier_order=5)
 m.fit(train)
