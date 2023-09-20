@@ -118,12 +118,13 @@ data_arabic = data.rename(columns={
     "Volume": "كمية التداول"
 })
 
+desired_order = ["التاريخ", "الافتتاح", "أعلى سعر", "أدنى سعر", "الإغلاق", "سعر الإغلاق المعدل", "كمية التداول"]
+data_arabic = data_arabic[desired_order]
+
 # Display the Arabic-named columns
 st.write(data_arabic.tail(6))
 
-# You can access the original data and the Arabic-named data separately
-st.write("Original Data:")
-st.write(data_copy)
+
 
 
 
