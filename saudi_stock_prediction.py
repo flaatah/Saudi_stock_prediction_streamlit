@@ -105,18 +105,18 @@ st.write(data.tail(6)
 
 
 # Plot raw data
-def plot_raw_data():
-	fig = go.Figure()
-	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="الافتتاح"))
-	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="الاغلاق"))
-	fig.layout.update(title_text='عرض البيانات الزمنية التاريخية', xaxis_rangeslider_visible=True)
-	st.plotly_chart(fig)	
-plot_raw_data()
+# def plot_raw_data():
+# 	fig = go.Figure()
+# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="الافتتاح"))
+# 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="الاغلاق"))
+# 	fig.layout.update(title_text='عرض البيانات الزمنية التاريخية', xaxis_rangeslider_visible=True)
+# 	st.plotly_chart(fig)	
+# plot_raw_data()
 
 
 # Predict forecast with Prophet.
-train = data[['Date','Close']]
-train = train.rename(columns={"Date": "ds", "Close": "y"})
+train = data[['التاريخ','الإغلاق']]
+train = train.rename(columns={"التاريخ": "ds", "الإغلاق": "y"})
 
 #To datetime
 train['ds'] = pd.to_datetime(train['ds'])
