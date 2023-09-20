@@ -91,13 +91,14 @@ data = yf.download(selected_symbol, START, TODAY)
 data.reset_index(inplace=True)
 
 # Display the stock data as a line chart
-def new_name(data):
-	st.write(" البيانات الحقيقية لاخر ستة أيام")
-	data = data.rename(columns={"Date": "التاريخ", "Open":"الافتتاح","High":"أعلى سعر","Low":"أدنى سعر",
-                             "Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
-	st.write(data.tail(6)
-	return data
-new_name()
+#def new_name(data):
+st.write(" البيانات الحقيقية لاخر ستة أيام")
+data = data.rename(columns={"Date": "التاريخ", "Open":"الافتتاح","High":"أعلى سعر","Low":"أدنى سعر",
+			    "Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
+st.write(data.tail(6)
+	
+	 #return data
+#new_name()
 
 #st.line_chart(data["Close"])
 
