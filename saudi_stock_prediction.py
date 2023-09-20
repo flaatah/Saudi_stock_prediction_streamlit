@@ -95,10 +95,10 @@ def new_name(data):
 	st.write(" البيانات الحقيقية لاخر ستة أيام")
 	data_ar = data.rename(columns={"Date": "التاريخ", "Open":"الافتتاح","High":"أعلى سعر","Low":"أدنى سعر",
 			    	"Close":"الإغلاق","Adj Close":"سعر الإغلاق المعدل", "Volume": "كمية التداول"})
-	
+	#st.write(data_ar.tail(6)
 	return data_ar
-new_name(data)
-st.write(data_ar.tail(6)
+new_name(data.tail(6)
+
 #st.line_chart(data["Close"])
 
 
